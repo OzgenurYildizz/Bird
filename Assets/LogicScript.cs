@@ -8,19 +8,29 @@ public class LogicScript : MonoBehaviour
 {
     // Start is called before the first frame update
 
-    public int playScore;
+// public int playScore;
     public Text scoreText;
+    public Text highScoreText;
     public GameObject gameOverScreen;
     public AudioSource scoreSound;
     public AudioSource gameOverSound;
 
+    private int score;
+
     [ContextMenu("Increase Score")]
+
+    public void Start()
+    {
+        highScoreText.text= PlayerPrefs.GetInt("HighScore" ,0).ToString();
+       
+    }
     public void addScore(int scoreToAdd)
     {
-        playScore=playScore + scoreToAdd;
-        scoreText.text = playScore.ToString();
+        score =score + scoreToAdd;
+        scoreText.text = score.ToString();
         scoreSound.Play();
     }
+
 
     public void restartGame()
     {
@@ -31,5 +41,13 @@ public class LogicScript : MonoBehaviour
     {
         gameOverScreen.SetActive(true);
         gameOverSound.Play();
+
+        if(score > PlayerPrefs.GetInt("HighScore"))
+        {
+            
+            PlayerPrefs.SetInt("HighScore" , score);
+            highScoreText.text = score.ToString();
+        }
+
     }
 }

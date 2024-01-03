@@ -14,7 +14,7 @@ GameObject:
   - component: {fileID: 737935729682099410}
   - component: {fileID: 1024037858748582371}
   - component: {fileID: 2377114546450804324}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: Bird
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -164,6 +164,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   myRigidbody: {fileID: 1535229602773539036}
   flapStrenght: 10
+  logic: {fileID: 0}
+  birdIsAlive: 1
 --- !u!95 &2377114546450804324
 Animator:
   serializedVersion: 5

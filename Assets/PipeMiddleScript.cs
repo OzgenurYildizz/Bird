@@ -19,7 +19,7 @@ public class PipeMiddleScript : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        if (collision.gameObject.layer==3) //sadece kuþ layera çarptýðýnda artsýn
+        if (collision.gameObject.layer==3) //sadece kuþ layerý çarptýðýnda artsýn
         {
             logic.addScore(1); //Fonksiyonun daha çok yönlü olmasýný saðlar 
         }
